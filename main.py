@@ -15,10 +15,13 @@ if __name__ == "__main__":
     B = 0.0549554191529751
     cx = 319.500213623047
     cy = 234.513290405273
+    
+    templateHeight = 6
+    templateWidth = 6
 
     Estimator = depth.Estimator(leftImage, rightImage)
     Estimator.setCameraParameters(fx, fy, B, cx, cy)
-    Estimator.calculateDisparity(6, 6)
+    Estimator.calculateDisparity(templateWidth, templateHeight)
     Estimator.displayDisparity()
 
     Estimator.createDepthMap()
